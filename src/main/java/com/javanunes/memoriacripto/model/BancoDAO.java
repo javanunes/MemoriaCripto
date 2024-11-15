@@ -11,7 +11,7 @@ import java.sql.*;
 
 /**
  *
- * @author javanunes (itanhaem@live.com)
+ * @author JavaNunes Rosenberg 
  *  Ferramenta de console computa o dia que você comprou cripto moedas e quanto elas valiam
  *  Para quem compra cripto moedas mas não lembra quanto valia a moeda comprada no dia que você fez
  *  um determinado investimento, permitindo você ter noção se teve lucro ou não em outros dias
@@ -102,10 +102,16 @@ public class BancoDAO {
     public String retornaResultadoMoeda(String nomeMoeda){
         Exibicao exb = new Exibicao();
         StringBuilder resultado = new StringBuilder();
-        String query ="SELECT * FROM moedas WHERE nome='"+nomeMoeda+"'";
-       
+        String query;
+        
+        if(nomeMoeda.isEmpty()){
+           query = "SELECT * FROM moedas";
+        }
+        else{
+           query = "SELECT * FROM moedas WHERE nome='"+nomeMoeda+"'"; 
+        }
+        
         try{
-            
             Connection db = conecta();
             Statement stmt = db.createStatement();
             ResultSet rs = stmt.executeQuery(query);

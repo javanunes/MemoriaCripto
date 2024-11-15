@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author javanunes (itanhaem@live.com)
+ * @author JavaNunes Rosenberg 
  *  Ferramenta de console computa o dia que você comprou cripto moedas e quanto elas valiam
  *  Para quem compra cripto moedas mas não lembra quanto valia a moeda comprada no dia que você fez
  *  um determinado investimento, permitindo você ter noção se teve lucro ou não em outros dias
@@ -61,10 +61,17 @@ public class Nucleo {
            bcd.insereDadosTabela(med);
      }
        
-     public void listarMoedas(String moeda){
+     public void listarMoeda(String moeda){
          BancoDAO bcd = new BancoDAO();
          Exibicao exb = new Exibicao();
          exb.print(bcd.retornaResultadoMoeda(moeda));
+     } 
+     
+     public void listarTodasMoedas(String moeda){
+         BancoDAO bcd = new BancoDAO();
+         Exibicao exb = new Exibicao();
+         exb.print("\n------------------------------------------------------------\n");
+         exb.print(bcd.retornaResultadoMoeda(""));
      } 
      
      public void pegarListarMoedas(){
@@ -76,7 +83,7 @@ public class Nucleo {
           if(!moeda.isEmpty()){
               if(moeda.length() < 101){
                   exb.print("\n------------------------------------------------------------\n");
-                  listarMoedas(moeda);
+                  listarMoeda(moeda);
               }
           }
      }

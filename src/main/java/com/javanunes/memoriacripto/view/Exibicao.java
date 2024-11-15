@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author javanunes (itanhaem@live.com)
+ * @author JavaNunes Rosenberg 
  *  Ferramenta de console computa o dia que você comprou cripto moedas e quanto elas valiam
  *  Para quem compra cripto moedas mas não lembra quanto valia a moeda comprada no dia que você fez
  *  um determinado investimento, permitindo você ter noção se teve lucro ou não em outros dias
@@ -54,10 +54,13 @@ public class Exibicao {
                 System.exit(0);
                 break;
             case "help":
-                print("help  - exibe o menu de ajuda\n");
-                print("moeda - insere uma moeda investida hoje\n");
-                print("listar - lista os investimentos em moedas feitos\n");
-                print("apagar - apagar uma linha de registro especificada pelo seu id\n");
+                print("help         - exibe o menu de ajuda\n");
+                print("moeda        - insere uma moeda investida hoje\n");
+                print("listar       - lista os investimentos em moedas feitos\n");
+                print("listar todas - lista todas os investimentos de todas moedas\n");
+                print("apagar       - apagar uma linha de registro especificada pelo seu id\n");
+                print("arquivo      - mostra onde foi salvo os dados de cripto moedas\n");
+                
                 break;
             case "moeda":
                 ncl.pegarMoedaInvestidaAgora();
@@ -65,8 +68,8 @@ public class Exibicao {
             case "apagar":
                 ncl.apaga();
                 break;
-            case "xita":
-                
+            case "arquivo":
+                print(ncl.retornaCaminhoArquivoBancoDados());
                 break;
             case "osos":
                 
@@ -74,6 +77,10 @@ public class Exibicao {
             case "listar": 
                 ncl.pegarListarMoedas();
                 break;
+            case "listar todas":
+                ncl.listarTodasMoedas(solicitacao);
+                break;
+            case "xxx":    
             default:
                print("O que é "+ solicitacao + " ?");
                break;
