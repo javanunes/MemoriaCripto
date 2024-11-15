@@ -1,0 +1,4 @@
+com/javanunes/memoriacripto/view/Exibicao.class
+com/javanunes/memoriacripto/model/BancoDAO.class
+com/javanunes/memoriacripto/model/Moeda.class
+com/javanunes/memoriacripto/controller/Nucleo.class
